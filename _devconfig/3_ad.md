@@ -56,12 +56,12 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
     <ul>
       <li>If the CA that issued the smart card logon certificate or the domain controller certificates is not properly posted in the NTAuth store, the smart card logon process does not work. The corresponding answer is "Unable to verify the credentials".</li>
       <li>The NTAuth store is located in the Configuration container for the forest. For example, a sample location is as follows:<br/><br/>
-      <p class="code">LDAP://server1.name.com/CN=NTAuthCertificates,CN=Public Key Services,CN=Services,CN=Configuration,DC=name,DC=com</p></li>
+      <div class="code">LDAP://server1.name.com/CN=NTAuthCertificates,CN=Public Key Services,CN=Services,CN=Configuration,DC=name,DC=com</div></li>
       <li>By default, this store is created when you install a Microsoft Enterprise CA. The object can also be created manually by using ADSIedit.msc in the Windows 2000 Support tools or by using LDIFDE. For more information, click the following article number to view the article in the Microsoft Knowledge Base:<br/><br/>
       <p>295663 How to import third-party certification authority (CA) certificates into the Enterprise NTAuth store</p></li>
       <li>The relevant attribute is cACertificate, which is an octet String, multiple-valued list of ASN-encoded certificates.
       <br/>After you put the third-party CA in the NTAuth store, Domain-based Group Policy places a registry key (a thumbprint of the certificate) in the following location on all computers in the domain:
-      <br/><br/><p class="code">HKEY_LOCAL_MACHINE\Software\Microsoft\EnterpriseCertificates\NTAuth\Certificates</p>
+      <br/><br/><div class="code">HKEY_LOCAL_MACHINE\Software\Microsoft\EnterpriseCertificates\NTAuth\Certificates</div>
       This is refreshed every eight hours on workstations (the typical Group Policy pulse interval).</li>
     </ul>
   </div>
@@ -71,12 +71,12 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
     <ul>
       <li>Follow this step.</li>
       <li>Follow this step.<br/><br/>
-        <p class="code">Here's a block of interesting code.</p>
+        <div class="code">Here's a block of interesting code.</div>
       </li>
       <li>Follow this step.</li>
       <li>Follow this step.</li>
       <li>Follow this step.<br/><br/>
-        <p class="code">Here's a block of interesting code.</p>
+        <div class="code">Here's a block of interesting code.</div>
       </li>
       <li>Follow this step.</li>
       <li>Follow this step.</li>
@@ -88,7 +88,7 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
     <ul>
       <li>Follow this step.</li>
       <li>Follow this step.<br/><br/>
-        <p class="code">Here's a block of interesting code.</p>
+        <div class="code">Here's a block of interesting code.</div>
       </li>
       <li>Follow this step.</li>
     </ul>
@@ -96,19 +96,22 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
 </div>
 
 #### Test your solution!
+
   Insert your PIV card.
   <ul>
     <li>Follow this step.</li>
-    <li>Follow this step.<br/><br/>
-      <p class="code">Here's a block of interesting code.</p>
+    <li>Follow this step.<br/>
+      <div class="code">Here's a block of interesting code.</div>
     </li>
     <li>Follow this step.</li>
   </ul>
 
 #### References
+
 This guide was derived from a <a href="https://support.microsoft.com/en-us/kb/281245">Microsoft Knowledgebase Article</a>.
 
 #### Related Playbooks
+
 <ul>
 <li><a href="{{ site.baseurl }}/4_adadmin/" title="How do I enable Microsoft AD for Admin access?">How do I enable Microsoft AD for Admin access?</a></li>
 <li><a href="{{ site.baseurl }}/5_domainassert/" title="How do I enable a domain to assert assurance in AD?">How do I enable a domain to assert assurance in AD?</a></li>
