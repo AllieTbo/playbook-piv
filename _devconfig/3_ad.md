@@ -26,7 +26,7 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
 
 #### Complete the following steps:
 <div id="accordion">
-  <h3>1. Add the root CA to the trusted roots in an Active Directory Group Policy object</h3>
+  <h3>1. Add the root CA to the trusted roots in an Active Directory Group Policy object.</h3>
   <div>
     To configure Group Policy in the Windows 2000 domain to distribute the third-party CA to the trusted root store of all domain computers:
     <ol>
@@ -65,50 +65,39 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
       This is refreshed every eight hours on workstations (the typical Group Policy pulse interval).</li>
     </ul>
   </div>
-  <h3>3. Do an additional step.</h3>
+  <h3>3. Request and install a domain controller certificate.</h3>
   <div>
-    This is a short description of this step.
-    <ul>
-      <li>Follow this step.</li>
-      <li>Follow this step.<br/><br/>
-        <div class="code">Here's a block of interesting code.</div>
-      </li>
-      <li>Follow this step.</li>
-      <li>Follow this step.</li>
-      <li>Follow this step.<br/><br/>
-        <div class="code">Here's a block of interesting code.</div>
-      </li>
-      <li>Follow this step.</li>
-      <li>Follow this step.</li>
-    </ul>
+    <p> Request and install a domain controller certificate on the domain controller(s). Each domain controller that is going to authenticate smartcard users must have a domain controller certificate.</p>
+    <p>If you install a Microsoft Enterprise CA in an Active Directory forest, all domain controllers automatically enroll for a domain controller certificate. For more information about requirements for domain controller certificates from a third-party CA, click the following article number to view the article in the Microsoft Knowledge Base:</p>
+    <p class="code"><a href="https://support.microsoft.com/en-us/kb/291010">291010</a> Requirements for domain controller certificates from a third-party CA</p>
+    <p>NOTE: The domain controller certificate is used for Secure Sockets Layer (SSL) authentication, Simple Mail Transfer Protocol (SMTP) encryption, Remote Procedure Call (RPC) signing, and the smart card logon process. Using a non-Microsoft CA to issue a certificate to a domain controller may cause unexpected behavior or unsupported results. An improperly formatted certificate or a certificate with the subject name absent may cause these or other capabilities to stop responding.</p>
   </div>
-  <h3>n. Validate your solution by authenticating to a system using your PIV card.</h3>
+  <h3>4. Correlate PIV card Certificates with active directory accounts.</h3>
   <div>
-    Insert your PIV card.
-    <ul>
-      <li>Follow this step.</li>
-      <li>Follow this step.<br/><br/>
-        <div class="code">Here's a block of interesting code.</div>
-      </li>
-      <li>Follow this step.</li>
-    </ul>
+    <p>Placeholder.</p>
+  </div>
+  <h3>5. Install smart card reader hardware and drivers.</h3>
+  <div>
+    <p>Install the smart card reader hardware as specified by the hardware vendor's documentation.</p>
   </div>
 </div>
 
 #### Test your solution!
 
   Insert your PIV card.
-  <ul>
-    <li>Follow this step.</li>
-    <li>Follow this step.<br/>
-      <div class="code">Here's a block of interesting code.</div>
-    </li>
-    <li>Follow this step.</li>
-  </ul>
+  <ol>
+    <li>Insert your PIV card into your card reader.</li>
+    <li>Enter the PIN to unlock the card.</li>
+    <li>Verify that authentication occurred successfully.</li>
+  </ol>
+
+#### Troubleshooting
+
+  Placeholder.
 
 #### References
 
-This guide was derived from a <a href="https://support.microsoft.com/en-us/kb/281245">Microsoft Knowledgebase Article</a>.
+  This guide was derived from a <a href="https://support.microsoft.com/en-us/kb/281245">Microsoft Knowledgebase Article</a>.
 
 #### Related Playbooks
 
