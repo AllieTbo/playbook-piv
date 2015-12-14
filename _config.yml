@@ -42,18 +42,18 @@ navigation:
   url: index.html
   internal: true
   coll: false
-#- text: How do I use PIV/CAC with a Unix-like system?
-#  url: 1_unix
-#  internal: true
-#  coll: false
-#- text: How do I use PIV/CAC on a Mac?
-#  url: 2_mac
-#  internal: true
-#  coll: false
-#- text: How do I enable Microsoft AD for PIV Logon?
-#  url: 3_ad
-#  internal: true
-#  coll: false
+- text: Elements of a PIV Card
+  url: elements
+  internal: true
+  coll: false
+- text: PIV Infrastructure
+  url: infrastructure
+  internal: true
+  coll: false
+- text: PIV Authentication Mechanisms
+  url: authen
+  internal: true
+  coll: false
 #- text: How do I enable Microsoft AD for Admin access?
 #  url: 4_adadmin
 #  internal: true
