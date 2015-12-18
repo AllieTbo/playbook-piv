@@ -3,32 +3,12 @@ layout: page
 title: PIV Infrastructure
 permalink: /infrastructure/
 ---
-#### Playbook Overview
-
-Introductory text explaining the play.
-
-#### Preconditions
-
-<ul>
-<li>precondition</li>
-<li>precondition</li>
-</ul>
-
-#### Complete the following steps:
-
-<ol>
-<li>Step 1</li>
-<li>Step 2</li>
-<li>Step 3</li>
-<li>Step 4</li>
-</ol>
-
-#### Postconditions
-<ul>
-<li>postcondition</li>
-<li>postcondition</li>
-</ul>
-
-#### References
-
-#### Related Playbooks
+<table>
+<thead><tr><th>Authentication Mechanism</th><th>Authentication Procedure</th></tr></thead>
+<tr><td>Item One</td><td>Item Two</td></tr>
+<tr><td>Item One</td><td>Item Two</td></tr>
+<tr><td>Item One</td><td>Item Two</td></tr>
+<tr><td>Item One</td><td>Item Two</td></tr>
+<tr><td>Item One</td><td>Item Two</td></tr>
+<tr><td>Item One</td><td>Item Two</td></tr>
+</table>

@@ -70,7 +70,7 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
     <ul>
     <li><a href="{{ site.baseurl }}/3_ad/">Microsoft Windows</a></li>
     <li><a href="{{ site.baseurl }}/2_mac/">Apple OSX</a></li>
-    <li><a href="{{ site.baseurl }}/2_mac/">Red Hat Linux</a></li>
+    <li><a href="{{ site.baseurl }}/1_unix/">Red Hat Linux</a></li>
     </ul>
   </div>
   <h3>5. Configure your client software.</h3>
