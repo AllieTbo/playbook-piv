@@ -42,10 +42,8 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
     <p>PKI Authentication Certificates that are stored on a PIV card have been signed by trusted Certification Authorities (CA). These certificates must be imported into the authentication mechanism's trust store to validate that the presented certificate is trusted and original.</p>
     <p>Reference the following guides to import the trusted CA certificates into your trust store:</p>
     <ul>
-    <li>Guide for product x</li>
-    <li>Guide for product x</li>
-    <li>Guide for product x</li>
-    <li>Guide for product x</li>
+    <li>Microsoft Windows Server 2008 r2</li>
+    <li>Microsoft Windows Server 2012</li>
     </ul>
   </div>
   <h3>3. Configure your access management tool.</h3>
