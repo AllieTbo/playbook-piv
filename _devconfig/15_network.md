@@ -13,9 +13,9 @@ $(function() {
 </script>
 #### Overview
 
-PIV Authentication to for the purposes of network logon requires the configuration of a number of components in an agency's architecture. At a high level, the following components will be required and configured:
+PIV Authentication to for the purposes of network logon requires the configuration of a number of components in an agency's architecture. Most agencies are Microsoft Windows based for connected systems. At a high level, the following components will be required and configured:
 <ul>
-<li>A user directory</li>
+<li>Microsoft Active Directory</li>
 <li>CA certificates that signed the card certificates that will be accepted</li>
 <li>User data linking the cards to the accounts in the user directory</li>
 <li>User card readers</li>
@@ -34,12 +34,7 @@ As with any PKI implementation, all parties must trust the Root CA to which the 
 <div id="accordion">
   <h3>1. Setup your user directory</h3>
   <div>
-    <p>For users internal to an agency, users and their access rights are typically stored in a directory. Your agency may already have a directory capable of filling this role. If you do, it is recommended that you utilize the existing system as appropriate to the enterprise. Typically, client applications can communicate with these servers using the Lightweight Directory Access Protocol (LDAP). Some examples of vendor server products that can accomplish this task are:</p>
-    <ul>
-    <li>Microsoft Active Directory</li>
-    <li>Oracle Unified Directory</li>
-    <li>IBM Security Directory Server</li>
-    </ul>
+    <p>For users internal to an agency, users and their access rights are typically stored in Microsoft Active Directory. Your agency may already have a directory capable of filling this role. If you do, it is recommended that you utilize the existing system as appropriate to the enterprise.
     <p>Please refer to your product's documentation for details on configuring a new system.</p>
   </div>
   <h3>2. Import the trusted CA Certificates.</h3>
