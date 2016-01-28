@@ -2,6 +2,34 @@
 ---
 
 /*
+==================================
+Custom Styles
+*/
+blockquote.info {
+    border-left: 12px solid #080;
+    background-color: #bfb;
+    padding: 12px 12px 12px 0;
+    margin-left: -40px;
+    padding-left: 40px;
+}
+
+blockquote.warning {
+    border-left: 12px solid #dc0;
+    background-color: #ffa;
+    padding: 12px 12px 12px 0;
+    margin-left: -40px;
+    padding-left: 40px;
+}
+
+blockquote.alert {
+    border-left: 12px solid #aa3838;
+    background-color: #fea8a8;
+    padding: 12px 12px 12px 0;
+    margin-left: -40px;
+    padding-left: 40px;
+}
+
+/*
 Main.css
 ==================================
 Begin with generic 'mobile first' styles
@@ -654,5 +682,3 @@ table tr th, table tr td
 	margin:0;
 	padding:6px 13px;
 }
-
-
