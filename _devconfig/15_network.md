@@ -48,7 +48,7 @@ The following reference information may be useful or required for configuring yo
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This step may be out of scope if you have already established your PKI infrastructure.
+> This may be out of scope since you're really building your PKI
 {:class="alert"}
 
 A subordinate issuing certificate authority is required to issue certificates from the root CA to lower tier systems and applications. The subordinate issuing CA acts as a middle tier between the root CA and the end client, allowing the root CA to be offline from the network, preventing compromise and protecting the integrity of the certificates that it issues.
@@ -91,7 +91,7 @@ Following are the instructions to install a Subordinate CA for **Windows Server 
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This step may be out of scope if you have already established your PKI infrastructure.
+> This may be out of scope since you're really building your PKI
 {:class="alert"}
 
 The root CA certificate will need to be requested from the parent CA. This provides the subordinate CA with the certificate that identifies the location of the root CA and establishes trust between the root CA and lower tier subordinate CAs and systems.
@@ -106,7 +106,7 @@ The root CA certificate will need to be requested from the parent CA. This provi
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This step may be out of scope if you have already established your PKI infrastructure.
+> This may be out of scope since you're really building your PKI
 {:class="alert"}
 
 Before signing and validating any certificates, it is necessary to configure the AIA and CDP extensions. These extensions point to the location of the trusted authority needed to validate certificates and the location of certificate revocation statuses, respectively. All certificates must be validated prior to application consumption.
