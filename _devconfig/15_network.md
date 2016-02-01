@@ -48,7 +48,7 @@ The following reference information may be useful or required for configuring yo
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This may be out of scope since you're really building your PKI
+> This step may be out of scope if you have already established your PKI infrastructure.
 {:class="alert"}
 
 A subordinate issuing certificate authority is required to issue certificates from the root CA to lower tier systems and applications. The subordinate issuing CA acts as a middle tier between the root CA and the end client, allowing the root CA to be offline from the network, preventing compromise and protecting the integrity of the certificates that it issues.
@@ -91,7 +91,7 @@ Following are the instructions to install a Subordinate CA for **Windows Server 
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This may be out of scope since you're really building your PKI
+> This step may be out of scope if you have already established your PKI infrastructure.
 {:class="alert"}
 
 The root CA certificate will need to be requested from the parent CA. This provides the subordinate CA with the certificate that identifies the location of the root CA and establishes trust between the root CA and lower tier subordinate CAs and systems.
@@ -106,7 +106,7 @@ The root CA certificate will need to be requested from the parent CA. This provi
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This may be out of scope since you're really building your PKI
+> This step may be out of scope if you have already established your PKI infrastructure.
 {:class="alert"}
 
 Before signing and validating any certificates, it is necessary to configure the AIA and CDP extensions. These extensions point to the location of the trusted authority needed to validate certificates and the location of certificate revocation statuses, respectively. All certificates must be validated prior to application consumption.
@@ -188,27 +188,10 @@ To enable or disable either of these policies:
 1.  In the console tree, edit the settings as appropriate.
 
 </div>
-
-### Configure Interactive Logon for Active Directory
-<div markdown="1">
-This step directs client Windows computers to allow for interactive PIV logon.
-
-1.  Click the **Group Policy** tab.
-1.  x
-1.  x
-
-    -  x
-    -  x
-
-1.  x
-1.  x
 </div>
-
-</div>
-
 
 #### References
 
-TBD
+Elements of this guide were derived from a [Microsoft Knowledgebase Article](https://support.microsoft.com/en-us/kb/281245)
 
 
