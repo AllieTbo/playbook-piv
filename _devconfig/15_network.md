@@ -188,27 +188,10 @@ To enable or disable either of these policies:
 1.  In the console tree, edit the settings as appropriate.
 
 </div>
-
-### Configure Interactive Logon for Active Directory
-<div markdown="1">
-This step directs client Windows computers to allow for interactive PIV logon.
-
-1.  Click the **Group Policy** tab.
-1.  x
-1.  x
-
-    -  x
-    -  x
-
-1.  x
-1.  x
 </div>
-
-</div>
-
 
 #### References
 
-TBD
+Elements of this guide were derived from a [Microsoft Knowledgebase Article](https://support.microsoft.com/en-us/kb/281245)
 
 
