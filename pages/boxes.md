@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PIV Infrastructure
-permalink: /infrastructure/
+permalink: /boxes/
 ---
 &nbsp;
 

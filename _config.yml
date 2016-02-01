@@ -46,14 +46,14 @@ navigation:
   url: elements
   internal: true
   coll: false
-- text: PIV Infrastructure
-  url: infrastructure
-  internal: true
-  coll: false
-- text: PIV Authentication Mechanisms
-  url: authen
-  internal: true
-  coll: false
+#- text: PIV Infrastructure
+#  url: boxes
+#  internal: true
+#  coll: false
+#- text: PIV Authentication Mechanisms
+#  url: authen
+#  internal: true
+#  coll: false
 #- text: How do I enable Microsoft AD for Admin access?
 #  url: 4_adadmin
 #  internal: true
