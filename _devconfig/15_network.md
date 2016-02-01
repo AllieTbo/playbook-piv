@@ -51,6 +51,8 @@ The following reference information may be useful or required for configuring yo
 > This may be out of scope since you're really building your PKI
 {:class="alert"}
 
+A subordinate issuing certificate authority is required to issue certificates from the root CA to lower tier systems and applications. The subordinate issuing CA acts as a middle tier between the root CA and the end client, allowing the root CA to be offline from the network, preventing compromise and protecting the integrity of the certificates that it issues.
+
 You can install the CA role on any Windows Server that is already a member of the domain, unlike your offline Root CA. Follow the Root CA configuration steps until you reach the screen which asks to select “Standalone CA” vs. “Enterprise CA”. [Please refer to this Microsoft TechNet Article for Installing a Subordinate CA.](https://technet.microsoft.com/en-us/library/cc772192.aspx)
 
 Below is a guided walkthrough of the steps contained in the Microsoft Article with a few more explanatory details.
@@ -92,6 +94,8 @@ Following are the instructions to install a Subordinate CA for **Windows Server 
 > This may be out of scope since you're really building your PKI
 {:class="alert"}
 
+The root CA certificate will need to be requested from the parent CA. This provides the subordinate CA with the certificate that identifies the location of the root CA and establishes trust between the root CA and lower tier subordinate CAs and systems.
+
 1.	On the subordinate CA’s certificate services management console, right click on your subordinate CA in the left pane navigation field, select All Tasks > Install CA Certificate and finally, start the Certificate Service on the subordinate CA.
 2.	In the context of Federal PKI, subordinate issuing CA’s per agency, will import the CA Certificate for its parent, or offline issuing CA.
 
@@ -104,6 +108,8 @@ Following are the instructions to install a Subordinate CA for **Windows Server 
 
 > This may be out of scope since you're really building your PKI
 {:class="alert"}
+
+Before signing and validating any certificates, it is necessary to configure the AIA and CDP extensions. These extensions point to the location of the trusted authority needed to validate certificates and the location of certificate revocation statuses, respectively. All certificates must be validated prior to application consumption.
 
 This task will configure Active Directory Certificate Services with the ability to make CRLs available to clients. It is necessary to copy the Root CA’s certificate file and the Root CA’s CRL file to your Domain Controller with the FSMO Role of Infrastructure Master. After doing this, run the following commands on your Domain Controller:
 
@@ -119,6 +125,9 @@ The Root CA is now configured, and the subordinate, or issuing CA must be config
 
 ### 4. Add the CA Certificates to the Trusted Root Certification Authorities
 <div markdown="1">
+
+The root certificate and intermediate CA certs are required by the domain controller to establish a chain of trust between the parent CA and the end users and applications. This allows the domain controller to issue trusted certificates to PIV cards within the directory and confirm the validity of smart card certificates during an access attempt.
+
 Active Directory must be configured to trust a certification authority to authenticate users based on certificates from that CA. Both Smartcard workstations and domain controllers must be configured with correctly configured certificates.
 
 This task will configure Active Directory to trust the Certification Authority chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
@@ -140,7 +149,10 @@ From here, follow these steps to import the intermediate certificate(s):
 
 ### 5. Publishing the CA Certificates to the NTAuth Store
 <div markdown="1">
-This task will configure Active Directory to trust the Certification Authority chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
+
+By publishing the CA certificate to the enterprise NTAuth store, the system administrator indicates that the CA is trusted to issue certain certificates. This allows the correct certificates to be issued to smartcards and thus enables logon through PIV card authentication. 
+
+This task will configure Active Directory to trust the CA chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
 
 1.	On the Active Directory Domain Controller, launch an **elevated command prompt** to use the **certutil** utility
 2.	To **Publish the Certificate** to the **Enterprise NTAuth store** type
@@ -153,6 +165,8 @@ This task will configure Active Directory to trust the Certification Authority c
 
 ### 6. Configure group policies for PIV Authentication
 <div markdown="1">
+
+
 This task describes 2 common configurations related to domain Group Policy Objects (GPO).
 
 |  scforceoption  |  This security policy setting requires users to log on to a computer by using a smart card.  |  Enabled / Disabled  |
@@ -192,23 +206,9 @@ This step directs client Windows computers to allow for interactive PIV logon.
 
 </div>
 
-#### Test your solution!
-
-  Insert your PIV card. Enter your pin. Viola.
-  <ul>
-    <li>Follow this step.</li>
-    <li>Follow this step.<br/>
-      <div class="code">Here's a block of interesting code.</div>
-    </li>
-    <li>Follow this step.</li>
-  </ul>
 
 #### References
 
 TBD
 
-#### Related Playbooks
 
-*  [How do I enable Microsoft AD for Admin access?">How do I enable Microsoft AD for Admin access?]({{ site.baseurl }}/4_adadmin/)
-*  [How do I enable a domain to assert assurance in AD?">How do I enable a domain to assert assurance in AD?]({{ site.baseurl }}/5_domainassert/)
-*  [How do I validate trust stores on a Windows platform?">How do I validate trust stores on a Windows platform?]({{ site.baseurl }}/9_trustwindows/)
