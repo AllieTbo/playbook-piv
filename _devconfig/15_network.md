@@ -48,7 +48,7 @@ The following reference information may be useful or required for configuring yo
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This may be out of scope since you're really building your PKI
+> This step may be out of scope if you have already established your PKI infrastructure
 {:class="alert"}
 
 You can install the CA role on any Windows Server that is already a member of the domain, unlike your offline Root CA. Follow the Root CA configuration steps until you reach the screen which asks to select “Standalone CA” vs. “Enterprise CA”. [Please refer to this Microsoft TechNet Article for Installing a Subordinate CA.](https://technet.microsoft.com/en-us/library/cc772192.aspx)
@@ -89,7 +89,7 @@ Following are the instructions to install a Subordinate CA for **Windows Server 
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This may be out of scope since you're really building your PKI
+> This step may be out of scope if you have already established your PKI infrastructure
 {:class="alert"}
 
 1.	On the subordinate CA’s certificate services management console, right click on your subordinate CA in the left pane navigation field, select All Tasks > Install CA Certificate and finally, start the Certificate Service on the subordinate CA.
@@ -102,7 +102,7 @@ Following are the instructions to install a Subordinate CA for **Windows Server 
 > If your organization does not issue its own PIV card authentication certificates, skip this task.
 {:class="warning"}
 
-> This may be out of scope since you're really building your PKI
+> This step may be out of scope if you have already established your PKI infrastructure 
 {:class="alert"}
 
 This task will configure Active Directory Certificate Services with the ability to make CRLs available to clients. It is necessary to copy the Root CA’s certificate file and the Root CA’s CRL file to your Domain Controller with the FSMO Role of Infrastructure Master. After doing this, run the following commands on your Domain Controller:
