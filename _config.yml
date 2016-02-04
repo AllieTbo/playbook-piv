@@ -108,7 +108,10 @@ navigation:
   internal: true
   coll: true
   collname: userconfig
-
+- text: Contribute
+  url: contribute
+  internal: true
+  coll: false
 
 collections:
   userconfig:
